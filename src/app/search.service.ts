@@ -11,7 +11,7 @@ import 'rxjs/add/operator/switchMap';
   providedIn: 'root'
 })
 export class SearchService {
-  baseUrl: string = 'https://api.cdnjs.com/libraries';
+  baseUrl: string = 'http://www.omdbapi.com/?i=tt3896198&apikey=7943ac9c';
   queryUrl: string = '?search=';
 
   constructor(private http: Http) { }
