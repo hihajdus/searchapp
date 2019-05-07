@@ -1,14 +1,9 @@
 <div class="card">
-
   <p> search works! </p>
-  <input (keyup)="searchTerm$.next($event.target.value)">
-
-  <ul *ngIf="results" class="list-group list-group-flush">
-    <li *ngFor="let result of results | slice:0:9" class="list-group-item">
-      <a href="{{ result.latest }}" target="_blank">
-        {{ result.name }}
-      </a>
+  <input #query (keyup.enter)="search(query.value)" type="text">
+  <ul>
+    <li *ngFor="let item of words">
+      {{item.word}}
     </li>
   </ul>
-
 </div>

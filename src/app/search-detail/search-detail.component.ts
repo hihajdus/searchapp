@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { SearchService } from '../search.service';
 
 @Component({
@@ -9,14 +9,16 @@ import { SearchService } from '../search.service';
   providers: [SearchService]
 })
 export class SearchDetailComponent {
-  results: Object;
-  searchTerm$ = new Subject<string>();
 
-  constructor(private searchService: SearchService) {
-    this.searchService.search(this.searchTerm$)
-      .subscribe(results => {
-        this.results = results.results;
-      });
+  words: any;
+  constructor(private service: SearchService) {
+
   }
 
+  search(term) {
+    this.service.search_word(term)
+    .subscribe(res => {
+      this.words = res;
+    })
+  }
 }
