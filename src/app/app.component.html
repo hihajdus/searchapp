@@ -1,9 +1,7 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-
-<app-search-detail>
-</app-search-detail>
+<h1>{{ title }}!</h1>
+<nav>
+  <a routerLink="/movie">Movie</a>
+  <a routerLink="/series">Series</a>
+</nav>
+<router-outlet></router-outlet>
 

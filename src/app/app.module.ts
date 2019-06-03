@@ -4,15 +4,21 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchDetailComponent } from './search-detail/search-detail.component';
 import { SearchService } from './search.service';
+import { AppRoutingModule } from './app-routing.module';
+import { MovieComponent } from './movie/movie.component';
+import { SeriesComponent } from './series/series.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchDetailComponent
+    SearchDetailComponent,
+    MovieComponent,
+    SeriesComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]
